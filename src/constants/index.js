@@ -8,6 +8,10 @@ const navLinks = [
     link: "#experience",
   },
   {
+    name: "Resume",
+    link: "#resume",
+  },
+  {
     name: "Skills",
     link: "#skills",
   },

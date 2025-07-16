@@ -27,14 +27,6 @@ const Footer = () => {
               )}
             </a>
           ))}
-          <a
-            href="/DheerajTalapagala_Resume.pdf"
-            download="DheerajTalapagala_Resume.pdf"
-            className="icon bg-white hover:bg-gray-200 transition-colors duration-300 rounded-xl flex items-center justify-center w-10 h-10 ml-2"
-            style={{ color: '#222' }}
-          >
-            <img src="/images/arrow-down.svg" alt="Download Resume" className="w-5 h-5" style={{ width: 20, height: 20, filter: 'invert(0) brightness(0.2)' }} />
-          </a>
         </div>
         <div className="flex flex-col justify-center">
           <p className="text-center md:text-end">
