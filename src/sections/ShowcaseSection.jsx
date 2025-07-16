@@ -46,11 +46,13 @@ const AppShowcase = () => {
 
   return (
     <div id="work" ref={sectionRef} className="app-showcase">
-      <div className="w-full">
+      <div className="w-full -mt-15">
         <TitleHeader
           title="Projects"
-          sub="🚀 My Featured Work"
+          sub="🚀 My Work"
         />
+        <br>
+        </br>
         <div className="showcaselayout">
           <div ref={rydeRef} className="first-project-wrapper">
             <div className="image-wrapper">

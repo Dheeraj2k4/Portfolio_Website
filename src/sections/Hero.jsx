@@ -1,73 +1,58 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { Leva } from 'leva';
+import { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { useMediaQuery } from 'react-responsive';
+import { PerspectiveCamera } from '@react-three/drei';
 
-import Button from "../components/Button";
-import { words } from "../constants";
-import HeroExperience from "../components/models/hero_models/HeroExperience";
+import Cube from '../components/Cube.jsx';
+import Rings from '../components/Rings.jsx';
+import ReactLogo from '../components/ReactLogo.jsx';
+import Button from '../components/Button';
+import Target from '../components/Target.jsx';
+import CanvasLoader from '../components/Loading.jsx';
+import HeroCamera from '../components/HeroCamera.jsx';
+import { calculateSizes } from '../constants';
+import HackerRoom from '../components/HackerRoom.jsx';
 
 const Hero = () => {
-  useGSAP(() => {
-    gsap.fromTo(
-      ".hero-text h1",
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" }
-    );
-  });
+  // Use media queries to determine screen size
+  const isSmall = useMediaQuery({ maxWidth: 440 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+
+  const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
   return (
-    <section id="hero" className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 z-10">
-        <img src="/images/bg.png" alt="" />
+    <section className="min-h-screen w-full flex flex-col relative" id="home">
+      <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
+        <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans">
+          Hi, I am Dheeraj <span className="waving-hand">👋</span>
+        </p>
+        <p className="hero_tag text-gray_gradient mt-2 text-center">Building Products & Brands</p>
       </div>
 
-      <div className="hero-layout">
-        {/* LEFT: Hero Content */}
-        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
-          <div className="flex flex-col gap-7">
-            <div className="hero-text">
-              <h1>
-                Shaping
-                <span className="slide">
-                  <span className="wrapper">
-                    {words.map((word, index) => (
-                      <span
-                        key={index}
-                        className="flex items-center md:gap-3 gap-1 pb-2"
-                      >
-                        <img
-                          src={word.imgPath}
-                          alt="person"
-                          className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
-                        />
-                        <span>{word.text}</span>
-                      </span>
-                    ))}
-                  </span>
-                </span>
-              </h1>
-              <h1>into Real Projects</h1>
-              <h1>that Deliver Results</h1>
-            </div>
+      <div className="w-full h-full absolute inset-0">
+        <Canvas className="w-full h-full">
+          <Suspense fallback={<CanvasLoader />}>
+            {/* To hide controller */}
+            <Leva hidden />
+            <PerspectiveCamera makeDefault position={[0, 0, 30]} />
 
-            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I’m Dheeraj, a developer based in Croatia with a passion for
-              code.
-            </p>
+            <HeroCamera isMobile={isMobile}>
+              <HackerRoom scale={sizes.deskScale} position={sizes.deskPosition} rotation={[0.1, -Math.PI, 0]} />
+            </HeroCamera>
 
-            <Button
-              text="See My Work"
-              className="md:w-80 md:h-16 w-60 h-12"
-              id="counter"
-            />
-          </div>
-        </header>
+            <group>
+              <Target position={sizes.targetPosition} />
+              <ReactLogo position={sizes.reactLogoPosition} />
+              <Rings position={[-24, 7, 0]} />
+              <Cube position={sizes.cubePosition} />
+            </group>
 
-        {/* RIGHT: 3D Model or Visual */}
-        <figure>
-          <div className="hero-3d-layout">
-            <HeroExperience />
-          </div>
-        </figure>
+            <ambientLight intensity={1} />
+            <directionalLight position={[10, 10, 10]} intensity={0.5} />
+          </Suspense>
+        </Canvas>
       </div>
     </section>
   );

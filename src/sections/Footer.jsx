@@ -28,8 +28,8 @@ const Footer = () => {
             </a>
           ))}
           <a
-            href="/resume.pdf"
-            download
+            href="/DheerajTalapagala_Resume.pdf"
+            download="DheerajTalapagala_Resume.pdf"
             className="icon bg-white hover:bg-gray-200 transition-colors duration-300 rounded-xl flex items-center justify-center w-10 h-10 ml-2"
             style={{ color: '#222' }}
           >

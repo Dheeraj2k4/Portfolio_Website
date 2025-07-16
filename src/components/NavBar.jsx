@@ -24,13 +24,13 @@ const NavBar = () => {
 
   return (
     <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
-      <div className="inner">
+      <div className="inner flex justify-between items-center w-full">
         <a href="#hero" className="logo">
-          Dheeraj JSM
+          Dheeraj Talapagala
         </a>
 
-        <nav className="desktop">
-          <ul>
+        <nav className="desktop flex-1 flex justify-start">
+          <ul className="flex items-center ml-63">
             {navLinks.map(({ link, name }) => (
               <li key={name} className="group">
                 <a href={link}>
@@ -39,6 +39,12 @@ const NavBar = () => {
                 </a>
               </li>
             ))}
+            <li className="group">
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <span>Resume</span>
+                <span className="underline" />
+              </a>
+            </li>
           </ul>
         </nav>
 
