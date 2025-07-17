@@ -12,6 +12,8 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState(""); // 'success' or 'error'
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,7 +23,8 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true); // Show loading state
-
+    setMessage("");
+    setMessageType("");
     try {
       await emailjs.sendForm(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
@@ -29,13 +32,15 @@ const Contact = () => {
         formRef.current,
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
-
-      // Reset form and stop loading
       setForm({ name: "", email: "", message: "" });
+      setMessage("Message sent successfully! I'll get back to you soon.");
+      setMessageType("success");
     } catch (error) {
-      console.error("EmailJS Error:", error); // Optional: show toast
+      setMessage("Failed to send message. Please try again later or contact me directly.");
+      setMessageType("error");
+      console.error("EmailJS Error:", error);
     } finally {
-      setLoading(false); // Always stop loading, even on error
+      setLoading(false);
     }
   };
 
@@ -104,6 +109,11 @@ const Contact = () => {
                     </div>
                   </div>
                 </button>
+                {message && (
+                  <div className={`mt-4 text-center ${messageType === "success" ? "text-green-500" : "text-red-500"}`}>
+                    {message}
+                  </div>
+                )}
               </form>
             </div>
           </div>
