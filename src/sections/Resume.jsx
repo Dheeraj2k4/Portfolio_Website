@@ -1,8 +1,13 @@
+import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 import TitleHeader from "../components/TitleHeader";
 
 const Resume = () => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+
   return (
-    <section id="resume" className="flex-center section-padding">
+    <section id="resume" className="flex-center section-padding" ref={ref}>
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
           title="My Resume"
@@ -10,13 +15,16 @@ const Resume = () => {
         />
         <div className="flex flex-col items-center mt-10">
           <div className="w-full max-w-4xl h-[80vh] border-2 border-gray-300 rounded-xl overflow-hidden shadow-lg bg-white">
-            <iframe
-              src="/DheerajTalapagala_Resume.pdf"
-              title="Dheeraj Talapagala Resume"
-              width="100%"
-              height="100%"
-              style={{ minHeight: '600px', border: 'none' }}
-            />
+            {inView && (
+              <iframe
+                src="/DheerajTalapagala_Resume.pdf"
+                title="Dheeraj Talapagala Resume"
+                width="100%"
+                height="100%"
+                style={{ minHeight: '600px', border: 'none' }}
+                onLoad={() => setIframeLoaded(true)}
+              />
+            )}
           </div>
           <a
             href="/DheerajTalapagala_Resume.pdf"
