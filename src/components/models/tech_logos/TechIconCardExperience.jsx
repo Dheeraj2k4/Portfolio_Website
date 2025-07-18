@@ -16,6 +16,14 @@ const TechIconCardExperience = ({ model }) => {
         }
       });
     }
+    // Force Three.js logo to white
+    if (model.name === "Three.js") {
+      scene.scene.traverse((child) => {
+        if (child.isMesh) {
+          child.material = new THREE.MeshStandardMaterial({ color: "white" });
+        }
+      });
+    }
   }, [scene]);
 
   return (

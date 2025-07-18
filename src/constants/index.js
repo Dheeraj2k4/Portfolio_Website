@@ -71,59 +71,74 @@ const logoIconsList = [
   },
 ];
 
-const techStackImgs = [
+export const techStack3D = [
   {
-    name: "React Developer",
-    imgPath: "/images/logos/react.png",
-  },
-  {
-    name: "Python Developer",
-    imgPath: "/images/logos/python.svg",
-  },
-  {
-    name: "Backend Developer",
-    imgPath: "/images/logos/node.png",
-  },
-  {
-    name: "Interactive Developer",
-    imgPath: "/images/logos/three.png",
-  },
-  {
-    name: "Project Manager",
-    imgPath: "/images/logos/git.svg",
-  },
-];
-
-const techStackIcons = [
-  {
-    name: "React Developer",
+    name: "React",
     modelPath: "/models/react_logo-transformed.glb",
     scale: 1,
     rotation: [0, 0, 0],
   },
   {
-    name: "Python Developer",
+    name: "Python",
     modelPath: "/models/python-transformed.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
-    name: "Backend Developer",
+    name: "Node.js",
     modelPath: "/models/node-transformed.glb",
     scale: 5,
     rotation: [0, -Math.PI / 2, 0],
   },
   {
-    name: "Interactive Developer",
+    name: "Three.js",
     modelPath: "/models/three.js-transformed.glb",
     scale: 0.05,
     rotation: [0, 0, 0],
   },
   {
-    name: "Project Manager",
+    name: "Git",
     modelPath: "/models/git-svg-transformed.glb",
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],
+  },
+];
+
+export const techStackDataAnalytics = [
+  {
+    name: "SQL",
+    imgPath: "/images/mysql-logo-svgrepo-com.svg",
+  },
+  {
+    name: "Power BI",
+    imgPath: "/images/power-bi-icon.svg",
+  },
+  {
+    name: "Pandas",
+    imgPath: "/images/Pandas.svg",
+  },
+  {
+    name: "Matplotlib",
+    imgPath: "/images/Matplotlib.svg",
+  },
+];
+
+export const techStackBackendAutomation = [
+  {
+    name: "Flask",
+    imgPath: "/images/palletsprojects_flask-icon.svg",
+  },
+  {
+    name: "Postman",
+    imgPath: "/images/postman-icon-svgrepo-com.svg",
+  },
+  {
+    name: "Docker",
+    imgPath: "/images/docker-svgrepo-com.svg",
+  },
+  {
+    name: "n8n",
+    imgPath: "/images/n8n_logo.png",
   },
 ];
 
@@ -202,7 +217,5 @@ export {
   expCards,
   expLogos,
   socialImgs,
-  techStackIcons,
-  techStackImgs,
   navLinks,
 };
