@@ -43,7 +43,6 @@ const AppShowcase = () => {
       );
     });
   }, []);
-<br></br>
   return (
     <div id="work" ref={sectionRef} className="app-showcase">
       <div className="w-full -mt-15">
