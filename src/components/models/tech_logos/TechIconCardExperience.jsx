@@ -1,12 +1,19 @@
-import { Environment, Float, OrbitControls, useGLTF } from "@react-three/drei";
+import { Float, OrbitControls, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import * as THREE from "three";
 
 const TechIconCardExperience = ({ model }) => {
-  const scene = useGLTF(model.modelPath);
+  const [error, setError] = useState(false);
+  
+  const scene = useGLTF(model.modelPath, true, true, (error) => {
+    console.error(`Failed to load model ${model.name}:`, error);
+    setError(true);
+  });
 
   useEffect(() => {
+    console.log(`Loading ${model.name} model:`, scene);
+    
     if (model.name === "Interactive Developer") {
       scene.scene.traverse((child) => {
         if (child.isMesh) {
@@ -24,19 +31,26 @@ const TechIconCardExperience = ({ model }) => {
         }
       });
     }
-  }, [scene]);
+  }, [scene, model.name]);
+
+  if (error) {
+    return (
+      <div className="w-full h-full flex items-center justify-center text-red-500">
+        <p>Failed to load {model.name}</p>
+      </div>
+    );
+  }
 
   return (
     <Canvas>
-      <ambientLight intensity={0.3} />
-      <directionalLight position={[5, 5, 5]} intensity={1} />
+      <ambientLight intensity={0.6} />
+      <directionalLight position={[5, 5, 5]} intensity={1.2} />
       <spotLight
         position={[10, 15, 10]}
         angle={0.3}
         penumbra={1}
         intensity={2}
       />
-      <Environment preset="city" />
 
       {/* 
         The Float component from @react-three/drei is used to 
