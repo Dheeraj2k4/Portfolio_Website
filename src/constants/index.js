@@ -37,68 +37,68 @@ const counterItems = [
 
 const logoIconsList = [
   {
-    imgPath: "/images/logos/company-logo-1.png",
+    imgPath: "/images/logos/react.png",
   },
   {
-    imgPath: "/images/logos/company-logo-2.png",
+    imgPath: "/images/logos/python.svg",
   },
   {
-    imgPath: "/images/logos/company-logo-3.png",
+    imgPath: "/images/logos/node.png",
   },
   {
-    imgPath: "/images/logos/company-logo-4.png",
+    imgPath: "/images/logos/git.svg",
   },
   {
-    imgPath: "/images/logos/company-logo-5.png",
+    imgPath: "/images/logos/three.png",
   },
   {
-    imgPath: "/images/logos/company-logo-6.png",
+    imgPath: "/images/react.svg",
   },
   {
-    imgPath: "/images/logos/company-logo-7.png",
+    imgPath: "/images/github.svg",
   },
   {
-    imgPath: "/images/logos/company-logo-8.png",
+    imgPath: "/images/linkedin-svgrepo-com.svg",
   },
   {
-    imgPath: "/images/logos/company-logo-9.png",
+    imgPath: "/images/docker-svgrepo-com.svg",
   },
   {
-    imgPath: "/images/logos/company-logo-10.png",
+    imgPath: "/images/mysql-logo-svgrepo-com.svg",
   },
   {
-    imgPath: "/images/logos/company-logo-11.png",
+    imgPath: "/images/power-bi-icon.svg",
   },
 ];
 
 export const techStack3D = [
   {
     name: "React",
-    modelPath: "/models/react_logo-transformed.glb",
+    modelPath: "/models/react-logo.glb",
     scale: 1,
     rotation: [0, 0, 0],
   },
   {
     name: "Python",
-    modelPath: "/models/python-transformed.glb",
+    modelPath: "/models/python-logo.glb",
     scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
     name: "Node.js",
-    modelPath: "/models/node-transformed.glb",
+    modelPath: "/models/node-logo.glb",
     scale: 5,
     rotation: [0, -Math.PI / 2, 0],
   },
   {
     name: "Three.js",
-    modelPath: "/models/three.js-transformed.glb",
+    modelPath: "/models/threejs-logo.glb",
     scale: 0.05,
     rotation: [0, 0, 0],
   },
   {
     name: "Git",
-    modelPath: "/models/git-svg-transformed.glb",
+    modelPath: "/models/git-logo.glb",
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],
   },
@@ -145,27 +145,27 @@ export const techStackBackendAutomation = [
 const expCards = [
   {
     review: "My time at MGIT has been the foundation of my journey—helping me build strong technical skills, explore new technologies, and take on leadership roles beyond the classroom.",
-    imgPath: "/images/mgit-logo.jpg", // Updated to match actual file
-    logoPath: "/images/mgit-logo.jpg",  // Updated to match actual file
+    imgPath: "/images/mgit-logo.jpg", // Reverted to previous image
+    logoPath: "/images/mgit-logo.jpg", // Reverted to previous image
     title: "Undergraduate Student, CSBS",
     date: "2022 – Present",
     responsibilities: [
       "Pursuing B.Tech in Computer Science & Business Systems with a CGPA of 8.27.",
       "Built multiple tech projects like an Automated Grading System and Face Recognition Attendance App.",
-      "Served as an organizing member of HackSavvy 2024 and the marketing team of the MGIT Tech Fest.",
+      "Served as an organizing member of HackSavvy 2024 and the marketing committee of the MGIT Tech Fest.",
       "Actively explored AI, product thinking, and SaaS through internships and self-driven projects.",
     ],
   },
   {
-    review: "Dheeraj was proactive, collaborative, and showed a strong understanding of client needs. His ability to manage outreach and refine workflows added real value to our growth efforts.",
-    imgPath: "/images/davillas-logo.jpg", // Updated to match actual file
-    logoPath: "/images/davillas-logo.jpg", // Updated to match actual file
+    review: "Demonstrated strong initiative and teamwork in managing client outreach and optimizing internal workflows. Played a key role in enhancing lead generation processes and supporting scalable growth strategies through consistent execution and thoughtful improvements.",
+    imgPath: "/images/davillas-logo.jpg", // Reverted to previous image
+    logoPath: "/images/davillas-logo.jpg", // Reverted to previous image
     title: "Business Development Intern",
     date: "March 2025 – June 2025",
     responsibilities: [
-      "Collaborated with cross-functional teams to drive client onboarding and outreach efforts.",
+      "Collaborated with cross-functional departments to drive client onboarding and outreach efforts.",
       "Performed targeted market research and designed marketing collateral for campaigns.",
-      "Streamlined operational workflows by coordinating with service teams for better client delivery.",
+      "Streamlined operational workflows by coordinating with service departments for better client delivery.",
       "Maintained structured CRM records to track lead progress and improve engagement.",
     ],
   },
@@ -173,16 +173,16 @@ const expCards = [
 
 const expLogos = [
   {
-    name: "logo1",
-    imgPath: "/images/logo1.png",
+    name: "tech1",
+    imgPath: "/images/logos/react.png",
   },
   {
-    name: "logo2",
-    imgPath: "/images/logo2.png",
+    name: "tech2",
+    imgPath: "/images/logos/python.svg",
   },
   {
-    name: "logo3",
-    imgPath: "/images/logo3.png",
+    name: "tech3",
+    imgPath: "/images/logos/node.png",
   },
 ];
 
