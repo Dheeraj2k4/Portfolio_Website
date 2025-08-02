@@ -72,7 +72,7 @@ const AppShowcase = () => {
             <div className="project" ref={gradingSystemRef}>
               <div className="image-wrapper bg-[#FFEFDB]">
                 <img
-                  src="/images/Project2.png"
+                  src="/images/project2.png"
                   alt="Automated Answer Sheet Grading System"
                 />
               </div>
