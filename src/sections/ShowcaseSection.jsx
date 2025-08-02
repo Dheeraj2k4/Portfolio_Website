@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AppShowcase = () => {
   const sectionRef = useRef(null);
-  const rydeRef = useRef(null);
-  const libraryRef = useRef(null);
-  const ycDirectoryRef = useRef(null);
+  const aiCareerCoachRef = useRef(null);
+  const gradingSystemRef = useRef(null);
+  const amazonAnalysisRef = useRef(null);
 
   useGSAP(() => {
     // Animation for the main section
@@ -21,7 +21,7 @@ const AppShowcase = () => {
     );
 
     // Animations for each app showcase
-    const cards = [rydeRef.current, libraryRef.current, ycDirectoryRef.current];
+    const cards = [aiCareerCoachRef.current, gradingSystemRef.current, amazonAnalysisRef.current];
 
     cards.forEach((card, index) => {
       gsap.fromTo(
@@ -53,37 +53,37 @@ const AppShowcase = () => {
         <br>
         </br>
         <div className="showcaselayout">
-          <div ref={rydeRef} className="first-project-wrapper">
+          <div ref={aiCareerCoachRef} className="first-project-wrapper">
             <div className="image-wrapper">
-              <img src="/images/project1.png" alt="Ryde App Interface" />
+              <img src="/images/Project1.jpg" alt="AI Career Coach Interface" />
             </div>
             <div className="text-content">
               <h2>
                 AI Career Coach
               </h2>
               <p className="text-white-50 md:text-xl">
-                An app built with React Native, Expo, & TailwindCSS for a fast,
+                An intelligent career guidance system built with React Native, Expo, & TailwindCSS for a fast,
                 user-friendly experience.
               </p>
             </div>
           </div>
 
           <div className="project-list-wrapper overflow-hidden">
-            <div className="project" ref={libraryRef}>
+            <div className="project" ref={gradingSystemRef}>
               <div className="image-wrapper bg-[#FFEFDB]">
                 <img
-                  src="/images/project2.png"
-                  alt="Library Management Platform"
+                  src="/images/Project2.png"
+                  alt="Automated Answer Sheet Grading System"
                 />
               </div>
-              <h2>The Library Management Platform</h2>
+              <h2>Automated Answer Sheet Grading System</h2>
             </div>
 
-            <div className="project" ref={ycDirectoryRef}>
-              <div className="image-wrapper bg-[#FFE7EB]">
-                <img src="/images/project3.png" alt="YC Directory App" />
+            <div className="project" ref={amazonAnalysisRef}>
+              <div className="image-wrapper bg-[#FFE7EB] landscape-image">
+                <img src="/images/Project3.jpg" alt="Amazon Sales Analysis" className="landscape-img" />
               </div>
-              <h2>Doctor Appointment Platform</h2>
+              <h2>Amazon Sales Analysis</h2>
             </div>
           </div>
         </div>
